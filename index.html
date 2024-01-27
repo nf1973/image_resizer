@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Resizer</title>
+    <link rel="stylesheet" href="styles/style.css" type="text/css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Quick Image Resizer</h1>
+
+      <label for="maxSize"
+        >Max Size (Longest side):<span id="maxSizeValue">1024</span></label
+      >
+      <input type="range" id="maxSize" min="1" max="2048" value="1024" />
+
+      <label for="quality">Quality:<span id="qualityValue">70</span></label>
+      <input type="range" id="quality" min="1" max="100" value="70" />
+
+      <div class="file-drop-zone" id="fileDropZone">
+        <div class="drop-zone-inner" id="dropZoneInner">
+          <img
+            src="img/upload-icon.svg"
+            alt="Upload Icon"
+            class="upload-icon"
+            id="uploadIcon"
+          />
+          <p class="drop-message" id="dropMessage">Drag & Drop images here</p>
+          <p class="drop-message-or">or</p>
+          <input
+            type="file"
+            id="fileInput"
+            multiple
+            accept="image/*"
+            class="file-input"
+          />
+          <button
+            id="resizeButton"
+            onclick="selectFiles()"
+            class="file-select-button"
+          >
+            Select Files
+          </button>
+        </div>
+      </div>
+      <button id="submitButton" onclick="resizeImages()">
+        Resize & Download Images
+      </button>
+    </div>
+    <script src="script/script.js" defer></script>
+  </body>
+</html>
